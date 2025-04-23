@@ -257,34 +257,85 @@ function App() {
   const [display, setDisplay] = useState("");
   const [operacao, setOperacao] = useState("");
 
+  const setNum = (e) => {
+    setDisplay(display + e.target.value);
+  };
+
+  const setOp = (e) => {
+    setOperacao(e.target.value);
+  };
+
+  const clear = () => {
+    setOperacao("");
+    setDisplay("");
+  };
+
   return (
     <div>
-      <button value={"="}>=</button>
+      <button onClick={setNum} value={"="}>
+        =
+      </button>
       <br />
       <br />
-      <button value={1}>1</button>
-      <button value={2}>2</button>
-      <button value={3}>3</button>
+      <button onClick={setNum} value={1}>
+        1
+      </button>
+      <button onClick={setNum} value={2}>
+        2
+      </button>
+      <button onClick={setNum} value={3}>
+        3
+      </button>
       <br />
-      <button value={4}>4</button>
-      <button value={5}>5</button>
-      <button value={6}>6</button>
+      <button onClick={setNum} value={4}>
+        4
+      </button>
+      <button onClick={setNum} value={5}>
+        5
+      </button>
+      <button onClick={setNum} value={6}>
+        6
+      </button>
       <br />
-      <button value={7}>7</button>
-      <button value={8}>8</button>
-      <button value={9}>9</button>
+      <button onClick={setNum} value={7}>
+        7
+      </button>
+      <button onClick={setNum} value={8}>
+        8
+      </button>
+      <button onClick={setNum} value={9}>
+        9
+      </button>
       <br />
-      <button value={0}>0</button>
+      <button onClick={setNum} value={0}>
+        0
+      </button>
       <br />
       <br />
-      <button value={"+"}>+</button>
-      <button value={"-"}>-</button>
-      <button value={"*"}>*</button>
-      <button value={"/"}>/</button>
+      <button onClick={setOp} value={"+"}>
+        +
+      </button>
+      <button onClick={setOp} value={"-"}>
+        -
+      </button>
+      <button onClick={setOp} value={"*"}>
+        *
+      </button>
+      <button onClick={setOp} value={"/"}>
+        /
+      </button>
       <br />
       <br />
 
-      <p>Resultado: </p>
+      <p>
+        Resultado: {display}
+        {operacao}
+      </p>
+      <br />
+      <br />
+      <button onClick={clear} value={"Clear"}>
+        Clear
+      </button>
     </div>
   );
 }
